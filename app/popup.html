@@ -1,0 +1,61 @@
+<!doctype html>
+<html style="height: 170px" ng-app="MTWChromeExt">
+
+<head>
+  <meta charset="utf-8">
+  <!-- build:css styles/popup-vendor.css -->
+  <!-- bower:css -->
+  <link rel="stylesheet" href="bower_components/material-design-lite/material.min.css" />
+  <!-- endbower -->
+  <!-- endbuild -->
+  <!-- build:css styles/main.css -->
+  <link href="styles/main.css" rel="stylesheet">
+  <!-- endbuild -->
+</head>
+
+<body style="width: 200px" ng-controller="PopupCtrl">
+  <ul class="demo-list-control mdl-list">
+    <li class="mdl-list__item">
+      <span class="mdl-list__item-primary-content">
+        Turn On
+      </span>
+        <span class="mdl-list__item-secondary-action">
+          <label class="mdl-switch mdl-js-switch mdl-js-ripple-effect" for="list-switch-1">
+            <input type="checkbox" id="list-switch-1" ng-model="enable" ng-click="toggleEnabled()" class="mdl-switch__input" checked />
+          </label>
+      </span>
+    </li>
+    <li class="mdl-list__item">
+      <span class="mdl-list__item-primary-content">
+        Toggle
+      </span>
+        <span class="mdl-list__item-secondary-action">
+          <label class="mdl-switch mdl-js-switch mdl-js-ripple-effect" for="list-switch-2">
+            <input type="checkbox" id="list-switch-2" ng-disabled="enable === false" ng-model="toggle" class="mdl-switch__input" checked />
+          </label>
+      </span>
+    </li>
+    <li class="mdl-list__item">
+      <span>
+        {{toggle}}
+      </span>
+    </li>
+
+  </ul>
+
+
+  <!-- build:js scripts/popup-vendor.js -->
+  <!-- bower:js -->
+  <script src="bower_components/angular/angular.js"></script>
+  <script src="bower_components/material-design-lite/material.min.js"></script>
+  <!-- endbower -->
+  <!-- endbuild -->
+
+  <script src="scripts/app.js"></script>
+  <!-- build:js scripts/popup.js -->
+  <script src="scripts/popup.js"></script>
+  <!-- endbuild -->
+
+</body>
+
+</html>
